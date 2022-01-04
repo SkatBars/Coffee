@@ -5,4 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/launchscreen"/>
+    android:background="@drawable/launchscreen">
+
+    <include layout="@layout/splash_layout">
+
+
+    </include>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
