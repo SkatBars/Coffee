@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/video_calling" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edit_email_log"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -30,38 +30,38 @@
         app:layout_constraintVertical_bias="0.55" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/edit_pass_log"
+        style="@style/editTextStyle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        style="@style/editTextStyle" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:text="Email"
         android:textColor="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintStart_toStartOf="@+id/editText" />
+        app:layout_constraintBottom_toTopOf="@+id/edit_email_log"
+        app:layout_constraintStart_toStartOf="@+id/edit_pass_log" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Password"
         android:textColor="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2" />
+        app:layout_constraintStart_toStartOf="@+id/edit_pass_log"
+        app:layout_constraintTop_toBottomOf="@+id/edit_email_log" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2">
+        app:layout_constraintStart_toStartOf="@+id/edit_pass_log"
+        app:layout_constraintTop_toBottomOf="@+id/edit_pass_log">
 
         <ImageView
             android:id="@+id/imageView3"
@@ -74,6 +74,7 @@
     <TextView
         android:id="@+id/textView4"
         style="@style/textViewStyle"
+        android:layout_marginBottom="8dp"
         android:text="Sign in"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -81,6 +82,7 @@
     <TextView
         android:id="@+id/textView5"
         style="@style/textViewStyle"
+        android:layout_marginBottom="8dp"
         android:text="Sign up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
