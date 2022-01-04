@@ -7,7 +7,7 @@
     tools:context=".MainActivity"
     android:background="@drawable/launchscreen">
 
-    <include layout="@layout/splash_layout">
+    <include layout="@layout/login_layout">
 
 
     </include>
