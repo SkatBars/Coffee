@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".coffee_lar.MainFragment"
+        android:background="#d7e8e8">
+
+    <View
+        android:id="@+id/line1_coffee"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#859293"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:id="@+id/title_coffee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COFFELAR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line1_coffee"
+        android:textSize="56sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+        <View
+            android:id="@+id/line2_coffee"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#859293"
+            app:layout_constraintTop_toBottomOf="@id/title_coffee"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"/>
+
+        <TextView
+            android:id="@+id/title2_coffee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Life begin after coffee"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line2_coffee"
+            android:layout_marginTop="8dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_coffee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title2_coffee"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
