@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.task23.R
 import com.example.task23.databinding.CoffeeItemLayoutBinding
 
-class CoffeeAdapter(private val coffies: List<Coffee>, private val context: Context) : RecyclerView.Adapter<CoffeeAdapter.CoffeeViewHolder>() {
+class CoffeeAdapter(private val coffies: List<Coffee>) : RecyclerView.Adapter<CoffeeAdapter.CoffeeViewHolder>() {
     private var previousHolder: CoffeeAdapter.CoffeeViewHolder? = null
     private var currentHolder: CoffeeAdapter.CoffeeViewHolder? = null
 
