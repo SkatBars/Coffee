@@ -22,6 +22,8 @@ class MainFragment : Fragment() {
         val coffies = mutableListOf<Coffee>()
         coffies.add(Coffee(R.drawable.coffee2, "Latte Art Speciality", "Expresso with milk"))
         coffies.add(Coffee(R.drawable.coffee1, "Long Black coffee", "Access water-milk"))
+        coffies.add(Coffee(R.drawable.coffee1, "Long Black coffee", "Access water-milk"))
+        coffies.add(Coffee(R.drawable.coffee1, "Long Black coffee", "Access water-milk"))
 
         val adapter = CoffeeAdapter(coffies, requireContext())
         binding.recyclerCoffee.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
