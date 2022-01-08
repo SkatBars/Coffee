@@ -11,7 +11,6 @@
         android:label="MainFragment" />
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.task23.coffee_lar.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        android:name="com.example.task23.coffee_lar.detail.DetailFragment"
+        android:label="DetailFragment" />
 </navigation>
