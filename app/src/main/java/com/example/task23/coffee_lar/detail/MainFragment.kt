@@ -1,4 +1,4 @@
-package com.example.task23.coffee_lar
+package com.example.task23.coffee_lar.detail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.task23.R
+import com.example.task23.coffee_lar.CategoriesAdapter
+import com.example.task23.coffee_lar.Category
+import com.example.task23.coffee_lar.Coffee
+import com.example.task23.coffee_lar.CoffeeAdapter
 import com.example.task23.databinding.FragmentMainBinding
 
 
