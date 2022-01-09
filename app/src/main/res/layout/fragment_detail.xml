@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/back_background"
                 android:layout_width="100dp"
                 android:layout_height="0dp"
                 android:src="@drawable/shape_for_back"
@@ -37,7 +37,7 @@
                 android:layout_height="50dp"
                 android:src="@drawable/back"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/imageView9"
+                app:layout_constraintEnd_toEndOf="@id/back_background"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/detailFragment">
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.task23.coffee_lar.detail.MainFragment"
+        android:name="com.example.task23.coffee_lar.MainFragment"
         android:label="MainFragment" />
     <fragment
         android:id="@+id/detailFragment"

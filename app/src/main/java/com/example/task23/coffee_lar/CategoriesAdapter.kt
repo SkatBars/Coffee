@@ -5,6 +5,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.task23.R
 import com.example.task23.databinding.CategoriesItemLayoutBinding
@@ -17,6 +19,7 @@ class CategoriesAdapter(private val categories: List<Category>) : RecyclerView.A
         fun bind(category: Category) {
             binding.categoryTxtv.text = category.name
             binding.categorieImg.setImageDrawable(context.getDrawable(category.image))
+
         }
 
         companion object {

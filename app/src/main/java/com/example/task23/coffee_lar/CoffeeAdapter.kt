@@ -2,26 +2,22 @@ package com.example.task23.coffee_lar
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.os.Build
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.core.view.marginEnd
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.task23.R
 import com.example.task23.databinding.CoffeeItemLayoutBinding
 
-class CoffeeAdapter(private val coffies: List<Coffee>) : RecyclerView.Adapter<CoffeeAdapter.CoffeeViewHolder>() {
+class CoffeeAdapter(private val coffies: List<Coffee>, private val navContoller: NavController) : RecyclerView.Adapter<CoffeeAdapter.CoffeeViewHolder>() {
     private var previousHolder: CoffeeAdapter.CoffeeViewHolder? = null
     private var currentHolder: CoffeeAdapter.CoffeeViewHolder? = null
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoffeeViewHolder {
 
-        return CoffeeViewHolder.from(parent)
+        return CoffeeViewHolder.from(parent, navContoller)
     }
 
     override fun onViewAttachedToWindow(holder: CoffeeViewHolder) {
@@ -45,8 +41,9 @@ class CoffeeAdapter(private val coffies: List<Coffee>) : RecyclerView.Adapter<Co
 
     class CoffeeViewHolder(
         private val binding: CoffeeItemLayoutBinding,
-        private val context: Context
-        ) : RecyclerView.ViewHolder(binding.root) {
+        private val context: Context,
+        private val navContoller: NavController
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun increaseItem() {
             val anim = AnimationUtils.loadAnimation(context, R.anim.scale_in)
@@ -65,13 +62,17 @@ class CoffeeAdapter(private val coffies: List<Coffee>) : RecyclerView.Adapter<Co
             binding.imgCoffee.setImageDrawable(context.getDrawable(coffee.img))
             binding.descriptionCoffee.text = coffee.description
             binding.nameCoffee.text = coffee.name
+
+            binding.btnPesan.setOnClickListener {
+                navContoller.navigate(R.id.detailFragment)
+            }
         }
 
         companion object {
-            fun from(parent:ViewGroup): CoffeeViewHolder {
+            fun from(parent: ViewGroup, navContoller: NavController): CoffeeViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = CoffeeItemLayoutBinding.inflate(layoutInflater, parent, false)
-                return CoffeeViewHolder(binding, parent.context)
+                return CoffeeViewHolder(binding, parent.context, navContoller)
             }
         }
     }

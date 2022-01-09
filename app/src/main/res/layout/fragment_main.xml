@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".coffee_lar.detail.MainFragment"
+        tools:context=".coffee_lar.MainFragment"
         android:background="#d7e8e8">
 
     <View

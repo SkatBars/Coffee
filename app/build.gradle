@@ -58,4 +58,7 @@ dependencies {
     // Dots indicator
     implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
 
+    //LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
+
 }
