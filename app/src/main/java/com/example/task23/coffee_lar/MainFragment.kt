@@ -35,7 +35,7 @@ class MainFragment : Fragment() {
         val myDecoration = LinearHorizontalSpacingDecoration(resources.getDimensionPixelSize(R.dimen.recycler_spacing))
 
         with(binding.recyclerCoffee) {
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            layoutManager = ProminentLayoutManager(context)
             adapter = myAdapter
             addItemDecoration(myDecoration)
             PagerSnapHelper().attachToRecyclerView(this)
