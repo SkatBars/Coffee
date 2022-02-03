@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import com.example.task23.R
 import com.example.task23.databinding.FragmentMainBinding
 
@@ -29,24 +30,28 @@ class MainFragment : Fragment() {
         coffies.add(Coffee(R.drawable.coffee1, "Long Black coffee", "Access water-milk"))
         coffies.add(Coffee(R.drawable.coffee2, "Long Black coffee", "Access water-milk"))
         coffies.add(Coffee(R.drawable.coffee1, "Long Black coffee", "Access water-milk"))
-        val adapter = CoffeeAdapter(coffies, findNavController())
-        binding.recyclerCoffee.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        binding.recyclerCoffee.adapter = adapter
 
-        val categories = mutableListOf<Category>()
-        categories.add(Category("Coffee", R.drawable.coffies))
-        categories.add(Category("Milkshacke", R.drawable.milkshake))
-        categories.add(Category("Coffee", R.drawable.coffies))
-        categories.add(Category("Milkshacke", R.drawable.milkshake))
-        categories.add(Category("Coffee", R.drawable.coffies))
-        binding.recylerCategory.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        binding.recylerCategory.adapter = CategoriesAdapter(categories)
+        val myAdapter = CoffeeAdapter(coffies, findNavController())
+        val myDecoration = LinearHorizontalSpacingDecoration(resources.getDimensionPixelSize(R.dimen.recycler_spacing))
 
-
-        binding.recyclerCoffee.setOnClickListener {
-            findNavController().navigate(R.id.detailFragment)
+        with(binding.recyclerCoffee) {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = myAdapter
+            addItemDecoration(myDecoration)
+            PagerSnapHelper().attachToRecyclerView(this)
         }
 
-        return binding.root
-    }
+            val categories = mutableListOf<Category>()
+            categories.add(Category("Coffee", R.drawable.coffies))
+            categories.add(Category("Milkshacke", R.drawable.milkshake))
+            categories.add(Category("Coffee", R.drawable.coffies))
+            categories.add(Category("Milkshacke", R.drawable.milkshake))
+            categories.add(Category("Coffee", R.drawable.coffies))
+            binding.recylerCategory.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            binding.recylerCategory.adapter = CategoriesAdapter(categories)
+
+
+
+            return binding.root
+        }
 }

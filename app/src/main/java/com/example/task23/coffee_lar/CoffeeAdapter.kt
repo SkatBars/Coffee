@@ -20,7 +20,7 @@ class CoffeeAdapter(private val coffies: List<Coffee>, private val navContoller:
         return CoffeeViewHolder.from(parent, navContoller)
     }
 
-    override fun onViewAttachedToWindow(holder: CoffeeViewHolder) {
+    /*override fun onViewAttachedToWindow(holder: CoffeeViewHolder) {
         previousHolder?.decreaseItem()
         currentHolder?.increaseItem()
 
@@ -28,7 +28,7 @@ class CoffeeAdapter(private val coffies: List<Coffee>, private val navContoller:
         currentHolder = holder
 
         super.onViewAttachedToWindow(holder)
-    }
+    }*/
 
 
     override fun onBindViewHolder(holder: CoffeeViewHolder, position: Int) {
