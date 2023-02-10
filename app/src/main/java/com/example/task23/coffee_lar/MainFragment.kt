@@ -47,7 +47,7 @@ class MainFragment : Fragment() {
             categories.add(Category("Coffee", R.drawable.coffies))
             categories.add(Category("Milkshacke", R.drawable.milkshake))
             categories.add(Category("Coffee", R.drawable.coffies))
-            binding.recylerCategory.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            binding.recylerCategory.layoutManager = context?.let { ProminentLayoutManager(it) }
             binding.recylerCategory.adapter = CategoriesAdapter(categories)
 
 
