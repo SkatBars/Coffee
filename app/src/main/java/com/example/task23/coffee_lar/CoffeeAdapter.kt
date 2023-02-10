@@ -10,26 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.task23.R
 import com.example.task23.databinding.CoffeeItemLayoutBinding
 
-class CoffeeAdapter(private val coffies: List<Coffee>, private val navContoller: NavController) : RecyclerView.Adapter<CoffeeAdapter.CoffeeViewHolder>() {
-    private var previousHolder: CoffeeAdapter.CoffeeViewHolder? = null
-    private var currentHolder: CoffeeAdapter.CoffeeViewHolder? = null
-
-
+class CoffeeAdapter(private val coffies: List<Coffee>, private val navContoller: NavController) :
+    RecyclerView.Adapter<CoffeeAdapter.CoffeeViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoffeeViewHolder {
-
         return CoffeeViewHolder.from(parent, navContoller)
     }
-
-    /*override fun onViewAttachedToWindow(holder: CoffeeViewHolder) {
-        previousHolder?.decreaseItem()
-        currentHolder?.increaseItem()
-
-        previousHolder = currentHolder
-        currentHolder = holder
-
-        super.onViewAttachedToWindow(holder)
-    }*/
-
 
     override fun onBindViewHolder(holder: CoffeeViewHolder, position: Int) {
         holder.bind(coffies[position])
@@ -44,19 +29,6 @@ class CoffeeAdapter(private val coffies: List<Coffee>, private val navContoller:
         private val context: Context,
         private val navContoller: NavController
     ) : RecyclerView.ViewHolder(binding.root) {
-
-        fun increaseItem() {
-            val anim = AnimationUtils.loadAnimation(context, R.anim.scale_in)
-            binding.root.startAnimation(anim)
-            anim.fillAfter = true
-        }
-
-        fun decreaseItem() {
-            val anim = AnimationUtils.loadAnimation(context, R.anim.scale_out)
-            binding.root.startAnimation(anim)
-            anim.fillAfter = true
-        }
-
         @SuppressLint("UseCompatLoadingForDrawables")
         fun bind(coffee: Coffee) {
             binding.imgCoffee.setImageDrawable(context.getDrawable(coffee.img))
